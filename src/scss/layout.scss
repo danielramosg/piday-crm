@@ -1,0 +1,18 @@
+// $primary: rgb(128, 0, 219);
+
+@import 'bootstrap/scss/bootstrap.scss';
+
+#logo {
+max-width: calc(min(20%,200px));
+top: 5px;
+left: 5px;
+position: absolute;
+}
+
+.fa {
+    transition: .3s transform ease-in-out;
+  }
+
+.collapsed .fa {
+  transform: rotate(-90deg);  
+}

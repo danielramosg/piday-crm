@@ -1,0 +1,37 @@
+{
+  "name": "pi-web",
+  "version": "1.0.0",
+  "description": "Web for the Pi day",
+  "main": "index.js",
+  "author": {
+    "name": "Daniel Ramos",
+    "email": "dramos@crm.cat"
+  },
+  "targets": {
+    "frontend": {
+      "source": [
+        "src/html/index.html"
+      ],
+      "context": "browser",
+      "isLibrary": false,
+      "publicUrl": "."
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "parcel serve --no-hmr --dist-dir dist-dev --target 'frontend'",
+    "build": "parcel build --target 'frontend'"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.3.0",
+    "bootstrap": "^5.2.3",
+    "document-ready": "^2.0.2",
+    "katex": "^0.16.4"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.3",
+    "parcel": "^2.8.3",
+    "prettier": "^2.8.4"
+  }
+}
