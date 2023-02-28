@@ -1,5 +1,6 @@
 import ready from 'document-ready';
 import renderMathInElement from '../../node_modules/katex/dist/contrib/auto-render';
+import { createSearchApp, loadPi } from './pisearch';
 
 function main() {
   Array.from(document.getElementsByClassName('num-printed-digits')).forEach(
@@ -20,6 +21,10 @@ function main() {
     // • rendering keys, e.g.:
     throwOnError: false,
   });
+
+  loadPi();
+
+  document.getElementById('searchApp').appendChild(createSearchApp());
 }
 
 ready(main);
