@@ -42,11 +42,12 @@ function createSearchApp() {
     .html('Loading...');
 
   const ctx = canvas.node()?.getContext('2d') as CanvasRenderingContext2D;
-  ctx.font = '50px Courier';
+  ctx.font = '50px monospace';
   const charWidth = ctx.measureText('3').width;
-  const charHeight = ctx.measureText('3').fontBoundingBoxAscent;
+  //   const charHeight = ctx.measureText('3').fontBoundingBoxAscent; // breaks on Firefox
+  const charHeight = ctx.measureText('3').actualBoundingBoxAscent + 14;
   //   console.log('charWidth: ', charWidth);
-  //   console.log('charHeight: ', charHeight);
+  console.log('charHeight: ', charHeight);
 
   const drawClear = () => {
     ctx.clearRect(0, 0, width, height);
@@ -99,11 +100,11 @@ function createSearchApp() {
         ctx.moveTo(tickpos, padTop - charHeight - 5);
         ctx.lineTo(tickpos, padTop - charHeight - tickLength - 5);
         ctx.stroke();
-        ctx.font = '30px Courier';
+        ctx.font = '30px monospace';
         ctx.setTransform(0, -1, 1, 0, tickpos - 10, padTop - charHeight - 20);
         ctx.fillText(d.toString(), 0, 0);
         ctx.resetTransform();
-        ctx.font = '50px Courier';
+        ctx.font = '50px monospace';
       }
     }
 
@@ -112,13 +113,13 @@ function createSearchApp() {
       ctx.moveTo(padLeft + charWidth * (prev.length + 0.5), padTop + 20);
       ctx.lineTo(padLeft + charWidth * (prev.length + 0.5), padTop + 60);
       ctx.stroke();
-      ctx.font = '30px Courier';
+      ctx.font = '30px monospace';
       ctx.fillText(
         strIndex.toString(),
         padLeft + charWidth * (prev.length + 0.5) + 10,
         padTop + 60,
       );
-      ctx.font = '50px Courier';
+      ctx.font = '50px monospace';
     }
   };
 
