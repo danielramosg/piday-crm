@@ -158,7 +158,14 @@ function createSearchApp() {
       };
 
       inputEl.on('input', () => {
-        const str = inputEl.node()?.value as string;
+        let str = inputEl.node()?.value as string;
+
+        // validate only numbers
+        if (str !== null) {
+          str = str.replace(/[^0-9]/g, '');
+          (inputEl.node() as HTMLInputElement).value = str;
+        }
+
         if (str === '') {
           outputEl.html('Cerca alguns dígits...');
           drawDefault();
