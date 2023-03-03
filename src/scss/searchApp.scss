@@ -1,0 +1,30 @@
+@import 'bootstrap/scss/bootstrap.scss';
+
+#searchApp {
+    text-align: center;
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+#canvasContainer {
+    background-color:hsl(40, 100%, 99%);
+    border: 1px black solid;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    max-width: 2000px;
+}
+
+#searchApp canvas {
+    height: 200px;
+}
+
+#searchInput{
+    border: 8px var(--bs-info) solid;
+    border-radius: 10px;
+    margin: 0.5em;
+}
+
+#searchOutput{
+    margin: 0.5em;
+}

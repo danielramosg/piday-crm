@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Pi Day</title>
     <link rel="stylesheet" href="../scss/layout.scss" />
+    <link rel="stylesheet" href="../scss/searchApp.scss" />
+
     <script type="module">
       import 'bootstrap';
     </script>
@@ -67,15 +69,24 @@
             <li class="nav-item">
               <a class="nav-link" href="photos.html">Fotos</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link">Sobre això</a>
-            </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <div class="container">
+    <div class="container-md">
+      <h2>Cercador de decimals de $\pi$</h2>
+      <div id="searchApp"></div>
+      <p>
+        Introdueix uns dígits i cerca'ls a dins de $\pi$! Si els teus dígits
+        apareixen abans del decimal <span class="num-printed-digits"></span>,
+        pots trobar-los impresos a la facultat! Si els trobes, pots deixar
+        escrit un missatge al costat.
+      </p>
+    </div>
+
+    <div class="container-md">
+      <h2>Què és això?</h2>
       <p>
         El 14 de març (escrit 3/14 en la notació anglosaxona) és el dia de
         $\pi$, i també es celebra el
@@ -99,17 +110,11 @@
         seqüència finita de dígits apareixerà en un moment donat als dígits de
         $\pi$.
       </p>
-    </div>
 
-    <div class="container-md">
-      <h2>Cercador de decimals de $\pi$</h2>
-      <p>Introdueix uns dígits i cerca'ls a dins de $\pi$</p>
-      <div style="background-color: aquamarine" id="searchApp">
-        (Applet per a trobar dígits)
-      </div>
-      Si els teus dígits apareixen abans del decimal
-      <span class="num-printed-digits"></span>, pots trobar-los impresos a la
-      facultat! Si els trobes, pots deixar un missatge al costat.
+      <p>
+        Et convidem a cercar alguns dígits dins de $\pi$ amb l'applet d'aquesta
+        pàgina i físicament a les parets de la facultat.
+      </p>
     </div>
 
     <div class="container-md">

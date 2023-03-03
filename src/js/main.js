@@ -22,7 +22,7 @@ function main() {
     throwOnError: false,
   });
 
-  loadPi();
+  // loadPi();
 
   document.getElementById('searchApp').appendChild(createSearchApp());
 }
