@@ -16,7 +16,7 @@ import * as d3 from 'd3-selection';
 function createSearchApp() {
   const nbhRadius = 50; // number of digits before and after
   const width = 4000;
-  const height = 400;
+  const height = 450;
 
   const container = document.createElement('div');
 
@@ -47,7 +47,7 @@ function createSearchApp() {
   //   const charHeight = ctx.measureText('3').fontBoundingBoxAscent; // breaks on Firefox
   const charHeight = ctx.measureText('3').actualBoundingBoxAscent + 14;
   //   console.log('charWidth: ', charWidth);
-  console.log('charHeight: ', charHeight);
+  // console.log('charHeight: ', charHeight);
 
   const drawClear = () => {
     ctx.clearRect(0, 0, width, height);
@@ -64,7 +64,7 @@ function createSearchApp() {
   const draw = (prev: string, str: string, post: string, strIndex: number) => {
     ctx.clearRect(0, 0, width, height);
     // const padLeft = 10;
-    const padTop = 250;
+    const padTop = 280;
     const tickLength = 150;
     const startIndex = strIndex - prev.length;
     const displayedDigits = prev.length + str.length + post.length;
@@ -102,7 +102,7 @@ function createSearchApp() {
         ctx.stroke();
         ctx.font = '30px monospace';
         ctx.setTransform(0, -1, 1, 0, tickpos - 10, padTop - charHeight - 20);
-        ctx.fillText(d.toString(), 0, 0);
+        ctx.fillText(d.toLocaleString('fr'), 0, 0);
         ctx.resetTransform();
         ctx.font = '50px monospace';
       }
@@ -115,7 +115,7 @@ function createSearchApp() {
       ctx.stroke();
       ctx.font = '30px monospace';
       ctx.fillText(
-        strIndex.toString(),
+        strIndex.toLocaleString('fr'),
         padLeft + charWidth * (prev.length + 0.5) + 10,
         padTop + 60,
       );
@@ -174,7 +174,7 @@ function createSearchApp() {
           //   console.log(location);
           if (location.found) {
             outputEl.html(`La seqüència ${location.str.toString()} es troba al 
-            decimal ${location.index?.toString()}.`);
+            decimal ${location.index?.toLocaleString('fr')}.`);
             draw(
               location.prev as string,
               location.str as string,
@@ -192,13 +192,13 @@ function createSearchApp() {
             //   .then((response) => response.json())
             //   .then((location) => {
             //     if (location.found) {
-            //       outputEl.html(`La seqüència ${location.str.toString()} es troba al
-            //     decimal ${location.index?.toString()}.`);
+            //       outputEl.html(`La seqüència ${location.str} es troba al
+            //     decimal ${Number(location.index).toLocaleString('fr')}.`);
             //       draw(
             //         location.prev as string,
             //         location.str as string,
             //         location.post as string,
-            //         location.index as number,
+            //         Number(location.index) as number,
             //       );
             //     } else {
             //       outputEl.html(
@@ -210,6 +210,7 @@ function createSearchApp() {
             //   .catch((err) => {
             //     console.error(err);
             //   });
+            // //
           }
         }
       });
