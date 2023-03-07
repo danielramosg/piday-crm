@@ -129,7 +129,6 @@ function createSearchApp() {
   fetch(new URL('../digits/pi1000000.txt', import.meta.url).href)
     .then((response) => response.text())
     .then((digits) => {
-      //   outputEl.html('');
       outputEl.html('Cerca alguns dígits...');
 
       const searchItUp = (str: string) => {
