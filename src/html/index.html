@@ -7,6 +7,7 @@
     <title>Pi Day</title>
     <link rel="stylesheet" href="../scss/layout.scss" />
     <link rel="stylesheet" href="../scss/searchApp.scss" />
+    <link rel="stylesheet" href="../scss/textEncode.scss" />
 
     <script type="module">
       import 'bootstrap';
@@ -128,27 +129,7 @@
         <li>
           Qualsevol paraula. És suficient amb traduïr cada lletra per un número,
           per exemple A=01, B=02, etc, Z=26.
-          <div style="background-color: darksalmon; height: 5em; width: 20em">
-            <input type="text" id="inputText" />
-            <div id="outputText"></div>
-            <script>
-              document
-                .getElementById('inputText')
-                .addEventListener('input', () => {
-                  const str = document.getElementById('inputText').value;
-
-                  const d = str
-                    .toUpperCase()
-                    .split('')
-                    .map((c) =>
-                      (c.charCodeAt(0) - 64).toLocaleString().padStart(2, '0'),
-                    )
-                    .join('');
-
-                  document.getElementById('outputText').innerHTML = d;
-                });
-            </script>
-          </div>
+          <div id="textEncodeApp"></div>
         </li>
         <li>
           Punts notables

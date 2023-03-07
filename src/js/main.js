@@ -1,11 +1,12 @@
 import ready from 'document-ready';
 import renderMathInElement from '../../node_modules/katex/dist/contrib/auto-render';
 import { createSearchApp, loadPi } from './pisearch';
+import { createTextEncodeApp } from './textEncode';
 
 function main() {
   Array.from(document.getElementsByClassName('num-printed-digits')).forEach(
     (element) => {
-      element.innerHTML = "NUM-DIGITS";
+      element.innerHTML = 'NUM-DIGITS';
     },
   );
 
@@ -25,6 +26,7 @@ function main() {
   // loadPi();
 
   document.getElementById('searchApp').appendChild(createSearchApp());
+  document.getElementById('textEncodeApp').appendChild(createTextEncodeApp());
 }
 
 ready(main);
