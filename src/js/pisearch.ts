@@ -182,35 +182,39 @@ function createSearchApp() {
               location.index as number,
             );
           } else {
-            outputEl.html(
-              'La seqüència no es troba entre els primers 1 000 000 dígits',
-            );
-            drawClear();
+            // outputEl.html(
+            //   'La seqüència no es troba entre els primers 1 000 000 dígits',
+            // );
+            // drawClear();
 
-            // outputEl.html('Buscant...');
-            // fetch(`http://localhost:3000/search/${str}`)
-            //   .then((response) => response.json())
-            //   .then((location) => {
-            //     if (location.found) {
-            //       outputEl.html(`La seqüència ${location.str} es troba al
-            //     decimal ${Number(location.index).toLocaleString('fr')}.`);
-            //       draw(
-            //         location.prev as string,
-            //         location.str as string,
-            //         location.post as string,
-            //         Number(location.index) as number,
-            //       );
-            //     } else {
-            //       outputEl.html(
-            //         'La seqüència no es troba entre els primers 1 000 000 000 dígits',
-            //       );
-            //       drawClear();
-            //     }
-            //   })
-            //   .catch((err) => {
-            //     console.error(err);
-            //   });
-            // //
+            // To disable server search, comment from here
+            outputEl.html('Buscant...');
+            fetch(`http://localhost:3000/search/${str}`)
+              .then((response) => response.json())
+              .then((location) => {
+                if (location.found) {
+                  outputEl.html(`La seqüència ${location.str} es troba al
+                decimal ${Number(location.index).toLocaleString('fr')}.`);
+                  draw(
+                    location.prev as string,
+                    location.str as string,
+                    location.post as string,
+                    Number(location.index) as number,
+                  );
+                } else {
+                  outputEl.html(
+                    'La seqüència no es troba entre els primers 1 000 000 000 dígits',
+                  );
+                  drawClear();
+                }
+              })
+              .catch((err) => {
+                outputEl.html(
+                  `La seqüència no es troba entre els primers 1 000 000 dígits. 
+                  Servidor no disponible per a cercar més enllà.`,
+                );
+              });
+            // to here
           }
         }
       });
