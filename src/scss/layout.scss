@@ -16,3 +16,27 @@ position: absolute;
 .collapsed .fa {
   transform: rotate(-90deg);  
 }
+
+#gallery > div{
+display: flex;
+flex-wrap: wrap;
+
+}
+
+.gallery-item {
+  display: flex;
+  align-items: center;
+  width: 400px;
+  height: 300px;
+  padding: 10px;
+  margin: 10px;
+  border: 1px gray solid;
+  border-radius: 5px;
+
+}
+
+.gallery-item img {
+  align-self: center;
+  width: 100%;
+  height: auto;
+}

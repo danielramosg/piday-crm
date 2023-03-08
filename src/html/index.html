@@ -149,5 +149,13 @@
     </div>
 
     <script type="module" src="../js/main.js"></script>
+    <script type="module">
+      import { createSearchApp } from '../js/pisearch';
+      import { createTextEncodeApp } from '../js/textEncode';
+      document.getElementById('searchApp').appendChild(createSearchApp());
+      document
+        .getElementById('textEncodeApp')
+        .appendChild(createTextEncodeApp());
+    </script>
   </body>
 </html>

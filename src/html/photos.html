@@ -73,6 +73,12 @@
     </nav>
 
     <div class="container-md">Properament, fotos de l'esdeveniment.</div>
+    <div class="container-md" id="gallery"></div>
+
     <script type="module" src="../js/main.js"></script>
+    <script type="module">
+      import createGallery from '../js/photos.ts';
+      document.getElementById('gallery').appendChild(createGallery());
+    </script>
   </body>
 </html>
