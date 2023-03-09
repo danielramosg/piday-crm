@@ -105,7 +105,7 @@ function createTextEncodeApp() {
     .attr('for', (d) => d.id)
     .html((d) => d.txt);
 
-  const defaultOp = opRadios.filter((d) => d.id === 'alpha');
+  const defaultOp = opRadios.filter((d) => d.id === 'alphaNoZeroes');
   defaultOp.attr('checked', true);
   defaultOp.dispatch('change');
 

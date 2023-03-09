@@ -213,6 +213,7 @@ function createSearchApp() {
                   `La seqüència no es troba entre els primers 1 000 000 dígits. 
                   Servidor no disponible per a cercar més enllà.`,
                 );
+                drawClear();
               });
             // to here
           }

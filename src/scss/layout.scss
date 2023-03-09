@@ -40,3 +40,36 @@ flex-wrap: wrap;
   width: 100%;
   height: auto;
 }
+
+
+
+
+.header{
+  background-image: url(../img/hero1.png);
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  
+}
+
+.footer {
+  /* position:relative; */
+  position: absolute;
+  margin-top: auto;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  text-align: center;
+  padding-bottom: 0.5em;
+  bottom: 0;
+}
+.footer ul{
+  display: flex;
+align-items: center;
+}
+
+// .footer a{
+//   color: black;
+//   margin-left: 1em;
+//   margin-right: 1em;
+// }
