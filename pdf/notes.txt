@@ -1,0 +1,2 @@
+ Generate the QR code
+ qrcode -o ./images/qr-url.png "http://piday.crm.cat"
