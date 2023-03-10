@@ -15,18 +15,19 @@ const renderKaTeX = (element: HTMLElement) => {
   });
 };
 
-const makeHeader = (opt: string) => {
+const makeHeader = () => {
   fetch(new URL('../html/header.html', import.meta.url).href)
     .then((resp) => resp.text())
     .then((txt) => {
       const elem = document.getElementById('header') as HTMLElement;
-      console.log(txt);
       elem.innerHTML = txt;
+      return elem;
+    })
+    .then((elem) => {
       renderKaTeX(elem);
-
-      const navElem = document.getElementById(`nav-${opt}`) as HTMLElement;
-      navElem.classList.add('active');
-      navElem.setAttribute('href', '#');
+    })
+    .catch((err) => {
+      console.error(err);
     });
 };
 

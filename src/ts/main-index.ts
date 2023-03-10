@@ -12,6 +12,6 @@ ready(() => {
     createTextEncodeApp(),
   );
 
-  makeHeader('index');
+  makeHeader();
   renderKaTeX(document.body);
 });

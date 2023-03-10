@@ -2,6 +2,6 @@ import ready from 'document-ready';
 import { renderKaTeX, makeHeader } from './helpers';
 
 ready(() => {
-  makeHeader('stories');
+  makeHeader();
   renderKaTeX(document.body);
 });
