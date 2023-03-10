@@ -3,7 +3,7 @@
 @import 'bootstrap/scss/bootstrap.scss';
 
 #logo {
-max-width: calc(min(20%,200px));
+max-width: calc(min(25%,250px));
 top: 5px;
 left: 5px;
 position: absolute;
@@ -45,11 +45,20 @@ flex-wrap: wrap;
 
 
 .header{
-  background-image: url(../img/hero1.png);
+  background-image: url(../img/hero.png);
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
   
+}
+
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+footer{
+  margin-top: auto;
 }
 
 .footer {
