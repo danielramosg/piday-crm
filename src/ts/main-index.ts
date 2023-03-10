@@ -14,4 +14,6 @@ ready(() => {
 
   makeHeader();
   renderKaTeX(document.body);
+
+  document.getElementById('searchInput')?.focus({ preventScroll: true });
 });

@@ -19,6 +19,7 @@
   },
   "scripts": {
     "getbillion": "cd src/digits && sh getBillion.sh",
+    "create_gallery": "cd src/gallery && sh create_gallery_assets.sh",
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "parcel serve --dist-dir dist-dev --target 'frontend'",
     "build": "parcel build --target 'frontend'"

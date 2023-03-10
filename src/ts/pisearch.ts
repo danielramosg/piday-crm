@@ -35,6 +35,7 @@ function createSearchApp() {
     .append('div')
     .append('input')
     .attr('id', 'searchInput');
+
   const outputEl = d3
     .select(container)
     .append('div')

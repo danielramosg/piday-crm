@@ -17,6 +17,17 @@ position: absolute;
   transform: rotate(-90deg);  
 }
 
+.cta {
+margin: 3em;
+padding: 5px;
+background-color: hsl(208, 100%, 90%);
+font-size:larger;
+border-radius: 10px;
+}
+.cta li {
+  padding: 5px;
+}
+
 #gallery > div{
 display: flex;
 flex-wrap: wrap;
@@ -48,8 +59,12 @@ flex-wrap: wrap;
   background-image: url(../img/hero.png);
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
-  
+  background-size: cover; /* Resize the background image to cover the entire container */ 
+}
+
+.header .headline {
+  // position: relative;
+  // bottom: -2em;
 }
 
 body{
