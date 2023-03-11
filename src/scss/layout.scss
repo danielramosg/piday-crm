@@ -75,6 +75,16 @@ body{
 footer{
   margin-top: auto;
 }
+footer ul{
+  display: flex;
+  justify-content: center;
+  margin: 0.5em;
+}
+footer li{
+  list-style: none;
+  margin-left: 1em;
+  margin-right: 1em;
+}
 
 .footer {
   /* position:relative; */
