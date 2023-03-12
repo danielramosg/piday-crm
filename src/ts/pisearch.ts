@@ -190,8 +190,18 @@ function createSearchApp() {
 
             // To disable server search, comment from here
             outputEl.html('Buscant...');
-            fetch(`http://localhost:3000/search/${str}`)
-              .then((response) => response.json())
+            const timeout = 10000; //timeout for the server response, 10s
+            const controller = new AbortController();
+            const countdown = setTimeout(() => controller.abort(), timeout);
+
+            fetch(`http://piday.crm.cat:3000/search/${str}`, {
+              signal: controller.signal,
+            })
+              // fetch(`http://localhost:3000/search/${str}`)
+              .then((response) => {
+                clearTimeout(countdown);
+                return response.json();
+              })
               .then((location) => {
                 if (location.found) {
                   outputEl.html(`La seqüència ${location.str} es troba al
