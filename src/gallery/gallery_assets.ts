@@ -1,3 +1,3 @@
 export default [
-new URL('./cleaned/sample1.jpeg',import.meta.url).href,
+new URL('./cleaned/img0001.png',import.meta.url).href,
 ];
