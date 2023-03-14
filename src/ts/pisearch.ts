@@ -194,7 +194,7 @@ function createSearchApp() {
             const controller = new AbortController();
             const countdown = setTimeout(() => controller.abort(), timeout);
 
-            fetch(`http://piday.crm.cat:3000/search/${str}`, {
+            fetch(`api/search/${str}`, {
               signal: controller.signal,
             })
               // fetch(`http://localhost:3000/search/${str}`)
